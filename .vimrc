@@ -21,6 +21,12 @@ set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 " }}}
+" Searching {{{
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set ignorecase
+nnoremap <leader><space> :nohlsearch<CR>
+" }}}
 " Folding {{{
 "=== folding ===
 set foldmethod=indent   " fold based on indent level
@@ -52,6 +58,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'kana/vim-textobj-user' 
+Plugin 'kana/vim-textobj-line'
 
 call vundle#end()
 " }}}
