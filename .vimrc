@@ -27,6 +27,14 @@ set hlsearch            " highlight matches
 set ignorecase
 nnoremap <leader><space> :nohlsearch<CR>
 " }}}
+" Windows & Tabs {{{
+" Moving between windows
+noremap <c-h> <c-w><c-h>
+noremap <c-j> <c-w><c-j>
+noremap <c-k> <c-w><c-k>
+noremap <c-l> <c-w><c-l>
+
+" }}}
 " Folding {{{
 "=== folding ===
 set foldmethod=indent   " fold based on indent level
@@ -63,6 +71,18 @@ Plugin 'tpope/vim-repeat'
 Plugin 'kana/vim-textobj-user' 
 Plugin 'kana/vim-textobj-line'
 
+Plugin 'preservim/nerdtree'
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
+" }}}
+" Plugins Setting {{{
+
+" Nerdtree setting
+map <C-n> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif          "close vim if the only window left open is a NERDTree
+
 " }}}
 " vim: set foldmethod=marker foldlevel=0 :
