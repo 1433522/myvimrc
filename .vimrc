@@ -1,5 +1,6 @@
 " Alex Zhang(Don't put anything in your .vimrc you don't understand!)
 " :help [setting] is best friend.
+" Syntax of the vim lang is verb+noun.
 " Colors {{{
 syntax enable
 colorscheme industry 
