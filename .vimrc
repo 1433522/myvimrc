@@ -75,14 +75,19 @@ Plugin 'preservim/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf.vim'
 
-Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 " }}}
 " Plugins Setting {{{
-
 " Nerdtree setting
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif          "close vim if the only window left open is a NERDTree
-
+" Youcompleteme setting
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+noremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " }}}
 " vim: set foldmethod=marker foldlevel=0 :
+
