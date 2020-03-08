@@ -72,6 +72,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line'
 
 Plugin 'preservim/nerdtree'
+Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf.vim'
 
 Plugin 'davidhalter/jedi-vim'
@@ -81,7 +82,6 @@ call vundle#end()
 
 " Nerdtree setting
 map <C-n> :NERDTreeToggle<CR>
-autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif          "close vim if the only window left open is a NERDTree
 
 " }}}
