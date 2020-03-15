@@ -70,6 +70,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'kana/vim-textobj-user' 
 Plugin 'kana/vim-textobj-line'
+Plugin 'mjbrownie/django-template-textobjects'
+Plugin 'mattn/emmet-vim'
+Plugin 'shime/vim-livedown'
 
 Plugin 'preservim/nerdtree'
 Plugin 'kien/ctrlp.vim'
@@ -80,7 +83,7 @@ call vundle#end()
 " }}}
 " Plugins Setting {{{
 " Nerdtree setting
-map <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif          "close vim if the only window left open is a NERDTree
 " Youcompleteme setting
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -88,6 +91,14 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 noremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Emmet setting
+let g:user_emmet_leader_key=','
+" Livedown setting
+nnoremap gp :LivedownToggle<CR>
+let g:livedown_open = 1   " should the browser window pop-up upon previewing 
+let g:livedown_autorun = 1 " should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_port = 1337 
+let g:livedown_browser = "firefox"
 " }}}
 " vim: set foldmethod=marker foldlevel=0 :
 
